@@ -1,1 +1,115 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>goyankaNutritionist</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f8f5;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background: green;
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+
+        input {
+            padding: 10px;
+            width: 60%;
+            margin: 20px;
+            border-radius: 8px;
+            border: 1px solid gray;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px gray;
+        }
+    </style>
+
+    <script>
+        function searchFood() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let cards = document.getElementsByClassName("card");
+
+            for (let i = 0; i < cards.length; i++) {
+                let text = cards[i].innerText.toLowerCase();
+                if (text.includes(input)) {
+                    cards[i].style.display = "block";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>🥗 goyankaNutritionist</h1>
+
+<input type="text" id="search" onkeyup="searchFood()" placeholder="Search food...">
+
+<div class="container">
+
+    <div class="card">
+        <h2>🍎 Apple</h2>
+        <p>Calories: 52</p>
+        <p>Fiber: 2.4g</p>
+    </div>
+
+    <div class="card">
+        <h2>🍌 Banana</h2>
+        <p>Calories: 96</p>
+        <p>Potassium: High</p>
+    </div>
+
+    <div class="card">
+        <h2>🥚 Egg</h2>
+        <p>Protein: 6g</p>
+        <p>Healthy fats</p>
+    </div>
+
+    <div class="card">
+        <h2>🥛 Milk</h2>
+        <p>Calcium: High</p>
+        <p>Protein: 8g</p>
+    </div>
+
+    <div class="card">
+        <h2>🍗 Chicken</h2>
+        <p>Protein: 27g</p>
+        <p>Low fat</p>
+    </div>
+
+    <div class="card">
+        <h2>🍚 Rice</h2>
+        <p>Calories: 130</p>
+        <p>Carbs: High</p>
+    </div>
+
+    <div class="card">
+        <h2>🥦 Broccoli</h2>
+        <p>Fiber: High</p>
+        <p>Vitamin C</p>
+    </div>
+
+</div>
+
+</body>
+</html>
